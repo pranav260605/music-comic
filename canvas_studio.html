@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Music-to-Comic • Multiverse Lens & Physical Smash Stage</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Inter:wght@500;700;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+  <style>
+    :root {
+      --crimson: #e11d48;
+      --yellow: #facc15;
+      --panel-bg: #18181b;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: radial-gradient(circle at top, #1f1218 0%, #09090b 75%);
+      color: #fafafa;
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 14px;
+      overflow-x: hidden;
+    }
+
+    .topbar {
+      width: 100%;
+      max-width: 1140px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      background: var(--panel-bg);
+      border: 3px solid var(--yellow);
+      box-shadow: 6px 6px 0 var(--crimson);
+      padding: 10px 16px;
+      margin-bottom: 14px;
+    }
+    .brand {
+      font-family: 'Bangers', cursive;
+      font-size: 1.75rem;
+      letter-spacing: 1.5px;
+      color: var(--yellow);
+      text-shadow: 2px 2px 0 var(--crimson);
+    }
+    .badge {
+      display: inline-block;
+      background: #16a34a;
+      color: #fff;
+      font-size: 0.7rem;
+      font-weight: 900;
+      padding: 4px 9px;
+      border-radius: 999px;
+      vertical-align: middle;
+      margin-left: 8px;
+    }
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+    }
+    select, button {
+      font-family: 'Inter', sans-serif;
+      font-weight: 800;
+      font-size: 0.82rem;
+      padding: 8px 13px;
+      border: 2px solid #000;
+      cursor: pointer;
+    }
+    select { background: #27272a; color: #fff; border-color: var(--yellow); }
+    .btn-play {
+      background: var(--yellow);
+      color: #000;
+      font-family: 'Bangers', cursive;
+      font-size: 1.15rem;
+      letter-spacing: 1px;
+      box-shadow: 3px 3px 0 var(--crimson);
+    }
+    .btn-action {
+      background: #27272a;
+      color: #e4e4e7;
+      border-color: #52525b;
+    }
+    .btn-action.active {
+      background: var(--crimson);
+      color: #fff;
+      border-color: var(--yellow);
+    }
+    .btn-sensor {
+      background: #1e1b4b;
+      color: #93c5fd;
+      border-color: #3b82f6;
+    }
+    .btn-sensor.active {
+      background: #2563eb;
+      color: #fff;
+      border-color: #facc15;
+    }
+    .btn-back {
+      background: transparent;
+      color: var(--yellow);
+      border: 2px solid var(--yellow);
+      text-decoration: none;
+      font-size: 0.78rem;
+      font-weight: 800;
+      padding: 8px 11px;
+    }
+
+    /* Full-Frame Centered Stage */
+    .stage-frame {
+      position: relative;
+      width: 100%;
+      max-width: 1140px;
+      aspect-ratio: 16 / 9;
+      background: #09090b;
+      border: 4px solid #fff;
+      box-shadow: 10px 10px 0 var(--crimson);
+      overflow: hidden;
+      cursor: crosshair;
+    }
+    canvas#comicCanvas {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    /* Live Drawable HTML Card (Base Style) */
+    #drawableComicCard {
+      width: 1140px;
+      height: 641px;
+      position: relative;
+      background: #111;
+      overflow: hidden;
+      font-family: 'Inter', sans-serif;
+      user-select: text;
+    }
+    #panelImg {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .comic-halftone {
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(rgba(0,0,0,0.22) 1px, transparent 0);
+      background-size: 6px 6px;
+      pointer-events: none;
+    }
+
+    .in-canvas-styles {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      display: flex;
+      gap: 8px;
+      z-index: 10;
+    }
+    .style-pill {
+      background: rgba(9, 9, 11, 0.9);
+      color: #fff;
+      border: 2px solid var(--yellow);
+      padding: 6px 14px;
+      font-family: 'Bangers', cursive;
+      font-size: 1.05rem;
+      letter-spacing: 1px;
+      cursor: pointer;
+    }
+    .style-pill.active {
+      background: var(--yellow);
+      color: #000;
+    }
+
+    .sfx-burst {
+      position: absolute;
+      top: 22px;
+      right: 26px;
+      background: var(--yellow);
+      color: var(--crimson);
+      font-family: 'Bangers', cursive;
+      font-size: 2.3rem;
+      letter-spacing: 2px;
+      padding: 6px 20px;
+      border: 4px solid #000;
+      box-shadow: 5px 5px 0 #000;
+      transform: rotate(4deg);
+    }
+
+    .speech-bubble {
+      position: absolute;
+      bottom: 28px;
+      left: 32px;
+      max-width: 70%;
+      background: #fff;
+      color: #09090b;
+      border: 4px solid #000;
+      border-radius: 22px;
+      padding: 16px 24px;
+      box-shadow: 7px 7px 0 var(--crimson);
+    }
+    .beat-tag {
+      font-size: 0.72rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      color: var(--crimson);
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+    }
+    .lyric-line {
+      font-size: 1.35rem;
+      font-weight: 900;
+      line-height: 1.3;
+      color: #09090b;
+    }
+
+    /* Webcam Corner Preview */
+    #camPreviewBox {
+      position: absolute;
+      bottom: 18px;
+      right: 18px;
+      width: 200px;
+      height: 118px;
+      border: 3px solid var(--yellow);
+      box-shadow: 4px 4px 0 var(--crimson);
+      background: #000;
+      display: none;
+      overflow: hidden;
+      z-index: 20;
+    }
+    #webcamVideo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scaleX(-1);
+    }
+    .cam-label {
+      position: absolute;
+      top: 4px;
+      left: 6px;
+      background: rgba(0,0,0,0.8);
+      color: var(--yellow);
+      font-size: 0.68rem;
+      font-weight: 900;
+      padding: 2px 6px;
+    }
+
+    .hint-bar {
+      width: 100%;
+      max-width: 1140px;
+      margin-top: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 8px;
+      font-size: 0.8rem;
+      color: #a1a1aa;
+    }
+    .hint-bar strong { color: var(--yellow); }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    <div>
+      <span class="brand">MULTIVERSE COMIC LENS</span>
+      <span class="badge" id="apiBadge">CHROME 157 HTML-IN-CANVAS</span>
+    </div>
+
+    <div class="controls">
+      <select id="songSelect" title="Select Song"></select>
+      <button class="btn-play" id="playBtn">▶ PLAY</button>
+      <button class="btn-action" id="smashBtn">🔨 SMASH GLASS</button>
+      <button class="btn-sensor" id="handBtn">🖐️ HAND BEAM: OFF</button>
+      <button class="btn-sensor" id="clapBtn">👏 CLAP SHOCK: OFF</button>
+      <a class="btn-back" href="index.html">← 4-TAB STUDIO</a>
+    </div>
+  </div>
+
+  <div class="stage-frame" id="stageFrame">
+    <canvas id="comicCanvas" width="1140" height="641" content="drawable">
+      <div id="drawableComicCard" drawable>
+        <img id="panelImg" src="" alt="Comic Panel" />
+        <div class="comic-halftone"></div>
+        <div class="in-canvas-styles" id="inCanvasStyles"></div>
+        <div class="sfx-burst" id="sfxBadge">READY!</div>
+        <div class="speech-bubble">
+          <div class="beat-tag" id="beatTag">MOVE CURSOR FOR X-RAY LENS • CLICK TO SHATTER</div>
+          <div class="lyric-line" id="lyricText">Loading multiverse stage...</div>
+        </div>
+      </div>
+    </canvas>
+
+    <!-- Hidden secondary image preloader for alternate art style inside the Dimension Lens -->
+    <img id="altStyleImg" src="" alt="" style="display:none;" />
+
+    <div id="camPreviewBox">
+      <video id="webcamVideo" playsinline></video>
+      <div class="cam-label" id="gestureStatus">HAND BEAM READY</div>
+    </div>
+  </div>
+
+  <div class="hint-bar">
+    <span><strong>Play Controls:</strong> Move mouse to steer <strong>Multiverse X-Ray Lens</strong> • <strong>Scroll wheel</strong> to resize portal • <strong>Click</strong> (or close fist in camera / clap hands) to <strong>SHATTER REALITY</strong>!</span>
+    <span id="telemetryReadout">LENS: 150px | PORTAL: ALT STYLE</span>
+  </div>
+
+  <audio id="audioPlayer"></audio>
+
+  <script>
+    function supportsHtmlInCanvas() {
+      if (typeof document === "undefined") return false;
+      const test = document.createElement("canvas");
+      test.setAttribute("content", "drawable");
+      return test.content === "drawable";
+    }
+
+    const hasHtmlInCanvas = supportsHtmlInCanvas();
+    const apiBadge = document.getElementById("apiBadge");
+    apiBadge.textContent = hasHtmlInCanvas
+      ? "HTML-IN-CANVAS ACTIVE (CHROME 157+)"
+      : "2D MULTIVERSE MODE";
+
+    const stageFrame = document.getElementById("stageFrame");
+    const canvas = document.getElementById("comicCanvas");
+    const ctx = canvas.getContext("2d");
+    const drawableCard = document.getElementById("drawableComicCard");
+    const panelImg = document.getElementById("panelImg");
+    const altStyleImg = document.getElementById("altStyleImg");
+    const lyricText = document.getElementById("lyricText");
+    const sfxBadge = document.getElementById("sfxBadge");
+    const beatTag = document.getElementById("beatTag");
+    const songSelect = document.getElementById("songSelect");
+    const playBtn = document.getElementById("playBtn");
+    const audioPlayer = document.getElementById("audioPlayer");
+    const stylesContainer = document.getElementById("inCanvasStyles");
+    const telemetryReadout = document.getElementById("telemetryReadout");
+
+    const W = 1140;
+    const H = 641;
+    canvas.width = W;
+    canvas.height = H;
+
+    let catalog = [];
+    let currentSongObj = null;
+    let currentStyle = "";
+    let altStyle = "";
+    let scenePanels = [];
+    let altScenePanels = [];
+
+    // Interactive Lens & Smash State
+    let lens = { x: W / 2, y: H / 2, targetX: W / 2, targetY: H / 2, radius: 155, zoom: 1.45, active: true };
+    let shards = [];
+    let shockwaves = [];
+    let popups = [];
+    let screenShake = 0;
+
+    // WebAudio Song Analyzer
+    let audioCtx, analyser, dataArray;
+    function initAudioAnalyzer() {
+      if (audioCtx) return;
+      audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      const src = audioCtx.createMediaElementSource(audioPlayer);
+      analyser = audioCtx.createAnalyser();
+      analyser.fftSize = 256;
+      src.connect(analyser);
+      analyser.connect(audioCtx.destination);
+      dataArray = new Uint8Array(analyser.frequencyBinCount);
+    }
+
+    // Trigger Physical Glass Shatter Explosion!
+    function triggerGlassSmash(originX = W / 2, originY = H / 2, label = "SMASH!!") {
+      shards = [];
+      const cols = 6;
+      const rows = 4;
+      const sw = W / cols;
+      const sh = H / rows;
+
+      for (let r = 0; r < rows; r++) {
+        for (let c = 0; c < cols; c++) {
+          const cx = c * sw + sw / 2;
+          const cy = r * sh + sh / 2;
+          const angle = Math.atan2(cy - originY, cx - originX) + (Math.random() - 0.5) * 0.5;
+          const speed = 10 + Math.random() * 18;
+          shards.push({
+            sx: c * sw,
+            sy: r * sh,
+            sw,
+            sh,
+            x: cx,
+            y: cy,
+            vx: Math.cos(angle) * speed,
+            vy: Math.sin(angle) * speed - 6,
+            rot: 0,
+            vrot: (Math.random() - 0.5) * 0.22,
+            life: 1.0
+          });
+        }
+      }
+      screenShake = 18;
+      shockwaves.push({ x: originX, y: originY, r: 15, alpha: 1.0 });
+      popups.push({ x: originX, y: originY, text: label, scale: 0.4, alpha: 1.0 });
+    }
+
+    document.getElementById("smashBtn").addEventListener("click", () => {
+      triggerGlassSmash(lens.x, lens.y, "KABOOM!!");
+    });
+
+    // Mouse Steering, Scroll-Wheel Portal Resize & Click-to-Smash
+    stageFrame.addEventListener("pointermove", (e) => {
+      const rect = canvas.getBoundingClientRect();
+      lens.targetX = ((e.clientX - rect.left) / rect.width) * W;
+      lens.targetY = ((e.clientY - rect.top) / rect.height) * H;
+      lens.active = true;
+    });
+
+    stageFrame.addEventListener("wheel", (e) => {
+      e.preventDefault();
+      lens.radius = Math.max(75, Math.min(340, lens.radius - e.deltaY * 0.18));
+    }, { passive: false });
+
+    stageFrame.addEventListener("pointerdown", (e) => {
+      const rect = canvas.getBoundingClientRect();
+      const cx = ((e.clientX - rect.left) / rect.width) * W;
+      const cy = ((e.clientY - rect.top) / rect.height) * H;
+      triggerGlassSmash(cx, cy, "CRACK!!");
+    });
+
+    // Load Catalog & Dual Styles (Base + Alternate Dimension Style)
+    async function initCatalog() {
+      const res = await fetch("catalog.json");
+      const data = await res.json();
+      catalog = Array.isArray(data) ? data : (data.songs || data.shows || []);
+      songSelect.innerHTML = catalog.map((s, i) =>
+        `<option value="${i}">${s.title || s.name || s.id}</option>`
+      ).join("");
+      if (catalog.length > 0) await loadSongByIndex(0);
+    }
+
+    async function loadSongByIndex(idx) {
+      currentSongObj = catalog[idx];
+      const songId = currentSongObj.id || currentSongObj.slug;
+      const availableStyles = currentSongObj.styles || ["shonen", "anime", "noir"];
+      if (!availableStyles.includes(currentStyle)) currentStyle = availableStyles[0];
+
+      stylesContainer.innerHTML = availableStyles.map(st =>
+        `<button class="style-pill ${st === currentStyle ? 'active' : ''}" data-style="${st}">${st.toUpperCase()}</button>`
+      ).join("");
+
+      audioPlayer.src = currentSongObj.audio || `shows/${songId}/audio.mp3`;
+      await loadStyleScene(songId, currentStyle);
+    }
+
+    async function loadStyleScene(songId, style) {
+      currentStyle = style;
+      const availableStyles = currentSongObj.styles || ["shonen", "anime", "noir"];
+      altStyle = availableStyles.find(s => s !== style) || style;
+
+      const [resMain, resAlt] = await Promise.all([
+        fetch(`shows/${songId}/${style}/scene.json`),
+        fetch(`shows/${songId}/${altStyle}/scene.json`).catch(() => null)
+      ]);
+
+      const scene = await resMain.json();
+      scenePanels = Array.isArray(scene) ? scene : (scene.panels || scene.beats || scene.scenes || []);
+
+      if (resAlt && resAlt.ok) {
+        const altData = await resAlt.json();
+        altScenePanels = Array.isArray(altData) ? altData : (altData.panels || altData.beats || altData.scenes || []);
+      } else {
+        altScenePanels = scenePanels;
+      }
+
+      updatePanelForTime(0);
+    }
+
+    function resolveImagePath(songId, style, active, idx) {
+      const raw = active.image || active.image_url || active.img || active.file || active.panel;
+      if (!raw) return `shows/${songId}/${style}/panel_${idx}.png`;
+      if (raw.startsWith("shows/") || raw.startsWith("http")) return raw;
+      return `shows/${songId}/${style}/${raw}`;
+    }
+
+    function updatePanelForTime(t) {
+      if (!scenePanels.length || !currentSongObj) return;
+      const songId = currentSongObj.id || currentSongObj.slug;
+      let idx = scenePanels.findIndex(p => {
+        const s = p.start ?? p.start_time ?? p.time ?? 0;
+        const e = p.end ?? p.end_time ?? 9999;
+        return t >= s && t < e;
+      });
+      if (idx === -1) {
+        const dur = audioPlayer.duration || 30;
+        idx = Math.min(scenePanels.length - 1, Math.floor((t / dur) * scenePanels.length));
+      }
+      const active = scenePanels[idx];
+      const imgPath = resolveImagePath(songId, currentStyle, active, idx);
+      if (panelImg.getAttribute("src") !== imgPath) panelImg.setAttribute("src", imgPath);
+
+      const altActive = altScenePanels[idx] || active;
+      const altPath = resolveImagePath(songId, altStyle, altActive, idx);
+      if (altStyleImg.getAttribute("src") !== altPath) altStyleImg.setAttribute("src", altPath);
+
+      lyricText.textContent = active.lyric || active.lyrics || active.caption || active.dialogue || active.text || "Steer the Multiverse X-Ray Lens across the page!";
+      sfxBadge.textContent = active.sfx || active.sound_effect || active.onomatopoeia || "POW!";
+      beatTag.textContent = `${currentStyle.toUpperCase()} BASE • ${altStyle.toUpperCase()} INSIDE LENS`;
+    }
+
+    stylesContainer.addEventListener("click", async (e) => {
+      e.stopPropagation();
+      const btn = e.target.closest(".style-pill");
+      if (!btn || !currentSongObj) return;
+      document.querySelectorAll(".style-pill").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      const wasPlaying = !audioPlayer.paused;
+      const t = audioPlayer.currentTime;
+      await loadStyleScene(currentSongObj.id || currentSongObj.slug, btn.dataset.style);
+      audioPlayer.currentTime = t;
+      if (wasPlaying) audioPlayer.play();
+    });
+
+    songSelect.addEventListener("change", () => loadSongByIndex(Number(songSelect.value)));
+
+    playBtn.addEventListener("click", async () => {
+      initAudioAnalyzer();
+      if (audioCtx.state === "suspended") await audioCtx.resume();
+      if (audioPlayer.paused) {
+        await audioPlayer.play();
+        playBtn.textContent = "⏸ PAUSE";
+      } else {
+        audioPlayer.pause();
+        playBtn.textContent = "▶ PLAY";
+      }
+    });
+
+    // 1. Webcam Hand Beam + Fist-Smash Trigger (Direct 1:1 Pointer Steering + Fist Explosion)
+    const handBtn = document.getElementById("handBtn");
+    const camPreviewBox = document.getElementById("camPreviewBox");
+    const webcamVideo = document.getElementById("webcamVideo");
+    const gestureStatus = document.getElementById("gestureStatus");
+    let handActive = false;
+    let cameraInstance = null;
+    let lastFistSmash = 0;
+
+    handBtn.addEventListener("click", async () => {
+      if (handActive) {
+        handActive = false;
+        handBtn.textContent = "🖐️ HAND BEAM: OFF";
+        handBtn.classList.remove("active");
+        camPreviewBox.style.display = "none";
+        if (cameraInstance) cameraInstance.stop();
+        return;
+      }
+
+      handActive = true;
+      handBtn.textContent = "🖐️ HAND BEAM: ON";
+      handBtn.classList.add("active");
+      camPreviewBox.style.display = "block";
+      gestureStatus.textContent = "STARTING CAMERA...";
+
+      const hands = new Hands({
+        locateFile: (file) => `https://cdn.jsdelivr.net/npm/@mediapipe/hands/${file}`
+      });
+      hands.setOptions({
+        maxNumHands: 1,
+        modelComplexity: 1,
+        minDetectionConfidence: 0.65,
+        minTrackingConfidence: 0.6
+      });
+
+      hands.onResults((results) => {
+        if (!results.multiHandLandmarks || results.multiHandLandmarks.length === 0) {
+          gestureStatus.textContent = "WAVE HAND IN CAMERA";
+          return;
+        }
+        const lm = results.multiHandLandmarks[0];
+        const palm = lm[9]; // Middle finger knuckle = super stable palm center!
+        lens.targetX = (1 - palm.x) * W;
+        lens.targetY = palm.y * H;
+
+        // Detect Closed Fist (fingertips folded below knuckles) -> INSTANT GLASS SMASH!
+        const indexFolded = lm[8].y > lm[6].y;
+        const middleFolded = lm[12].y > lm[10].y;
+        const ringFolded = lm[16].y > lm[14].y;
+
+        if (indexFolded && middleFolded && ringFolded) {
+          gestureStatus.textContent = "✊ FIST SMASH!!";
+          if (Date.now() - lastFistSmash > 950) {
+            lastFistSmash = Date.now();
+            triggerGlassSmash(lens.targetX, lens.targetY, "FIST SMASH!!");
+          }
+        } else {
+          // Hand closeness to camera scales portal radius!
+          const handSize = Math.hypot(lm[0].x - lm[9].x, lm[0].y - lm[9].y);
+          lens.radius = Math.max(95, Math.min(320, handSize * 950));
+          gestureStatus.textContent = "🖐️ STEERING LENS";
+        }
+      });
+
+      cameraInstance = new Camera(webcamVideo, {
+        onFrame: async () => {
+          if (handActive) await hands.send({ image: webcamVideo });
+        },
+        width: 320,
+        height: 180
+      });
+      await cameraInstance.start();
+    });
+
+    // 2. Clap / Shout Microphone Shockwave Trigger
+    const clapBtn = document.getElementById("clapBtn");
+    let clapActive = false;
+    let micStream = null;
+    let micAnalyser = null;
+    let micData = null;
+    let lastClapTime = 0;
+
+    clapBtn.addEventListener("click", async () => {
+      if (clapActive) {
+        clapActive = false;
+        clapBtn.textContent = "👏 CLAP SHOCK: OFF";
+        clapBtn.classList.remove("active");
+        if (micStream) micStream.getTracks().forEach(t => t.stop());
+        return;
+      }
+      try {
+        micStream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        const mCtx = new (window.AudioContext || window.webkitAudioContext)();
+        const mSrc = mCtx.createMediaStreamSource(micStream);
+        micAnalyser = mCtx.createAnalyser();
+        micAnalyser.fftSize = 256;
+        mSrc.connect(micAnalyser);
+        micData = new Uint8Array(micAnalyser.frequencyBinCount);
+        clapActive = true;
+        clapBtn.textContent = "👏 CLAP SHOCK: ON";
+        clapBtn.classList.add("active");
+      } catch (err) {
+        alert("Allow microphone access to trigger shockwaves by clapping or shouting!");
+      }
+    });
+
+    function drawLiveCard(dx, dy, dw, dh) {
+      if (hasHtmlInCanvas && typeof ctx.drawElementImage === "function") {
+        try {
+          ctx.drawElementImage(drawableCard, dx, dy, dw, dh);
+          return;
+        } catch (e) {}
+      }
+      if (panelImg.complete && panelImg.naturalWidth > 0) {
+        ctx.drawImage(panelImg, dx, dy, dw, dh);
+      }
+    }
+
+    function renderFrame(now) {
+      ctx.setTransform(1, 0, 0, 1, 0, 0);
+      ctx.clearRect(0, 0, W, H);
+
+      let bass = 0;
+      if (analyser && !audioPlayer.paused) {
+        analyser.getByteFrequencyData(dataArray);
+        bass = (dataArray[1] + dataArray[2] + dataArray[3]) / (3 * 255);
+        updatePanelForTime(audioPlayer.currentTime);
+      }
+
+      // Check Microphone Clap / Shout spike
+      if (clapActive && micAnalyser) {
+        micAnalyser.getByteTimeDomainData(micData);
+        let peak = 0;
+        for (let i = 0; i < micData.length; i++) {
+          const v = Math.abs(micData[i] - 128) / 128;
+          if (v > peak) peak = v;
+        }
+        if (peak > 0.42 && Date.now() - lastClapTime > 700) {
+          lastClapTime = Date.now();
+          triggerGlassSmash(lens.x, lens.y, "SONIC CLAP!!");
+        }
+      }
+
+      // Smoothly move Multiverse Lens toward mouse or palm
+      lens.x += (lens.targetX - lens.x) * 0.25;
+      lens.y += (lens.targetY - lens.y) * 0.25;
+      telemetryReadout.textContent = `LENS: ${Math.round(lens.radius)}px | BASE: ${currentStyle.toUpperCase()} | PORTAL: ${altStyle.toUpperCase()}`;
+
+      // Apply camera shake if glass just shattered
+      ctx.save();
+      if (screenShake > 0.2) {
+        ctx.translate((Math.random() - 0.5) * screenShake, (Math.random() - 0.5) * screenShake);
+        screenShake *= 0.86;
+      }
+
+      // 1. Base Full-Screen Live HTML-in-Canvas Layer
+      const pulse = 1.01 + bass * 0.04;
+      drawLiveCard((W - W * pulse) / 2, (H - H * pulse) / 2, W * pulse, H * pulse);
+
+      // 2. Flying Glass Shards (Real slices of the live HTML card!)
+      if (shards.length > 0) {
+        let alive = false;
+        for (const s of shards) {
+          if (s.life <= 0) continue;
+          alive = true;
+          s.x += s.vx;
+          s.y += s.vy;
+          s.vy += 0.65; // Gravity
+          s.rot += s.vrot;
+          s.life -= 0.022;
+
+          ctx.save();
+          ctx.globalAlpha = Math.max(0, s.life);
+          ctx.translate(s.x, s.y);
+          ctx.rotate(s.rot);
+          if (hasHtmlInCanvas && typeof ctx.drawElementImage === "function") {
+            ctx.drawElementImage(drawableCard, s.sx, s.sy, s.sw, s.sh, -s.sw / 2, -s.sh / 2, s.sw, s.sh);
+          } else if (panelImg.complete && panelImg.naturalWidth > 0) {
+            ctx.drawImage(panelImg, s.sx, s.sy, s.sw, s.sh, -s.sw / 2, -s.sh / 2, s.sw, s.sh);
+          }
+          ctx.strokeStyle = "#facc15";
+          ctx.lineWidth = 2;
+          ctx.strokeRect(-s.sw / 2, -s.sh / 2, s.sw, s.sh);
+          ctx.restore();
+        }
+        if (!alive) shards = [];
+      }
+
+      // 3. MULTIVERSE X-RAY LENS (Shows Alternate Style + Live Selectable DOM inside the Portal!)
+      if (lens.active) {
+        ctx.save();
+        ctx.beginPath();
+        ctx.arc(lens.x, lens.y, lens.radius, 0, Math.PI * 2);
+        ctx.clip();
+
+        const mag = lens.zoom + bass * 0.15;
+        const magW = W * mag;
+        const magH = H * mag;
+        const magX = lens.x - lens.x * mag;
+        const magY = lens.y - lens.y * mag;
+
+        // Draw alternate dimension artwork inside the portal, then overlay live HTML speech bubble/buttons!
+        if (altStyleImg.complete && altStyleImg.naturalWidth > 0) {
+          ctx.drawImage(altStyleImg, magX, magY, magW, magH);
+        }
+        ctx.globalAlpha = 0.88;
+        ctx.filter = "contrast(1.25) saturate(1.45)";
+        drawLiveCard(magX, magY, magW, magH);
+        ctx.restore();
+
+        // Neon Portal Ring + Dimension Label
+        ctx.save();
+        ctx.beginPath();
+        ctx.arc(lens.x, lens.y, lens.radius, 0, Math.PI * 2);
+        ctx.lineWidth = 5;
+        ctx.strokeStyle = "#facc15";
+        ctx.shadowColor = "#e11d48";
+        ctx.shadowBlur = 18;
+        ctx.stroke();
+
+        ctx.fillStyle = "#09090b";
+        ctx.fillRect(lens.x - 68, lens.y - lens.radius - 14, 136, 22);
+        ctx.fillStyle = "#facc15";
+        ctx.font = "900 11px Inter, sans-serif";
+        ctx.textAlign = "center";
+        ctx.fillText(`${altStyle.toUpperCase()} DIMENSION`, lens.x, lens.y - lens.radius + 1);
+        ctx.restore();
+      }
+
+      // 4. Shockwave Rings & Comic Action Popups
+      for (let i = shockwaves.length - 1; i >= 0; i--) {
+        const sw = shockwaves[i];
+        sw.r += 22;
+        sw.alpha -= 0.035;
+        if (sw.alpha <= 0) { shockwaves.splice(i, 1); continue; }
+        ctx.save();
+        ctx.beginPath();
+        ctx.arc(sw.x, sw.y, sw.r, 0, Math.PI * 2);
+        ctx.lineWidth = 6;
+        ctx.strokeStyle = `rgba(250, 204, 21, ${sw.alpha})`;
+        ctx.stroke();
+        ctx.restore();
+      }
+
+      for (let i = popups.length - 1; i >= 0; i--) {
+        const p = popups[i];
+        p.scale += (1.15 - p.scale) * 0.2;
+        p.alpha -= 0.025;
+        if (p.alpha <= 0) { popups.splice(i, 1); continue; }
+        ctx.save();
+        ctx.globalAlpha = p.alpha;
+        ctx.translate(p.x, p.y - 30);
+        ctx.scale(p.scale, p.scale);
+        ctx.font = "48px Bangers, cursive";
+        ctx.textAlign = "center";
+        ctx.lineWidth = 6;
+        ctx.strokeStyle = "#000";
+        ctx.strokeText(p.text, 0, 0);
+        ctx.fillStyle = "#facc15";
+        ctx.fillText(p.text, 0, 0);
+        ctx.restore();
+      }
+
+      ctx.restore();
+      requestAnimationFrame(renderFrame);
+    }
+
+    initCatalog();
+    requestAnimationFrame(renderFrame);
+  </script>
+</body>
+</html>
