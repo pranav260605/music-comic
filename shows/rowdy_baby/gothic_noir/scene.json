@@ -1,0 +1,35 @@
+{
+  "song_id": "rowdy_baby",
+  "style_id": "gothic_noir",
+  "bpm": 132,
+  "motion_preset": "bounce_dance",
+  "fx_type": "musical_notes",
+  "camera_motion": "street_scroll",
+  "accent_color": "#ffbe0b",
+  "bg_file": "bg.webp",
+  "pose_a_file": "pose_a.webp",
+  "pose_b_file": "pose_b.webp",
+  "midground_svg": "<svg viewBox='0 0 1280 720' xmlns='http://www.w3.org/2000/svg'><defs><linearGradient id='lampGradient' x1='0%' y1='0%' x2='0%' y2='100%'><stop offset='0%' style='stop-color:#ffbe0b;stop-opacity:0.6' /><stop offset='100%' style='stop-color:#ffbe0b;stop-opacity:0.1' /></linearGradient></defs><rect x='180' y='0' width='10' height='600' fill='url(#lampGradient)' opacity='0.35'/><circle cx='185' cy='0' r='30' fill='#ffbe0b' opacity='0.35'/><rect x='1090' y='0' width='10' height='600' fill='url(#lampGradient)' opacity='0.35'/><circle cx='1095' cy='0' r='30' fill='#ffbe0b' opacity='0.35'/><line x1='0' y1='680' x2='1280' y2='675' stroke='#ffbe0b' stroke-width='3' opacity='0.25' /><line x1='0' y1='650' x2='1280' y2='645' stroke='#ffbe0b' stroke-width='3' opacity='0.25' /><line x1='0' y1='710' x2='1280' y2='705' stroke='#ffbe0b' stroke-width='3' opacity='0.25' /></svg>",
+  "lyrics": [
+    {
+      "start": 0.0,
+      "end": 4.0,
+      "text": "Hey en goli sodaave, en kari kozhambae!"
+    },
+    {
+      "start": 4.0,
+      "end": 8.5,
+      "text": "Un kutty puppy naan, take me, take me!"
+    },
+    {
+      "start": 8.5,
+      "end": 13.5,
+      "text": "Hey rowdy baby... unnale mood aachu!"
+    },
+    {
+      "start": 13.5,
+      "end": 20.0,
+      "text": "One plus one two mama, you plus me free mama!"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "song_id": "derniere_danse",
+  "style_id": "gothic_noir",
+  "bpm": 115,
+  "motion_preset": "stair_glide_tilt",
+  "fx_type": "rain_streaks",
+  "camera_motion": "crane_down",
+  "accent_color": "#B22222",
+  "bg_file": "bg.webp",
+  "pose_a_file": "pose_a.webp",
+  "pose_b_file": "pose_b.webp",
+  "midground_svg": "<svg viewBox='0 0 1280 720' xmlns='http://www.w3.org/2000/svg'><g opacity='0.35'><path d='M150 720 L160 720 L160 300 L180 280 L180 260 L160 240 L160 220 L150 200 L140 220 L140 240 L120 260 L120 280 L140 300 L140 720 Z' fill='#222'/><rect x='135' y='190' width='30' height='30' fill='#FFA500'/><path d='M150 200 L145 180 L155 180 L150 200 Z' fill='#FFA500'/><path d='M1130 720 L1140 720 L1140 300 L1160 280 L1160 260 L1140 240 L1140 220 L1130 200 L1120 220 L1120 240 L1100 260 L1100 280 L1120 300 L1120 720 Z' fill='#222'/><rect x='1115' y='190' width='30' height='30' fill='#FFA500'/><path d='M1130 200 L1125 180 L1135 180 L1130 200 Z' fill='#FFA500'/></g></svg>",
+  "lyrics": [
+    {
+      "start": 0.0,
+      "end": 4.5,
+      "text": "Oh ma douce souffrance... pourquoi s'acharner ?"
+    },
+    {
+      "start": 4.5,
+      "end": 9.5,
+      "text": "Je ne suis qu'un \u00eatre sans importance..."
+    },
+    {
+      "start": 9.5,
+      "end": 14.5,
+      "text": "Je remue le ciel, le jour, la nuit..."
+    },
+    {
+      "start": 14.5,
+      "end": 20.0,
+      "text": "Je danse avec le vent, la pluie..."
+    }
+  ]
+}

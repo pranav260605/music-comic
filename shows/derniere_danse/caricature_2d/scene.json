@@ -1,0 +1,35 @@
+{
+  "song_id": "derniere_danse",
+  "style_id": "caricature_2d",
+  "bpm": 115,
+  "motion_preset": "stair_glide_tilt",
+  "fx_type": "rain_streaks",
+  "camera_motion": "street_scroll",
+  "accent_color": "#ffbe0b",
+  "bg_file": "bg.webp",
+  "pose_a_file": "pose_a.webp",
+  "pose_b_file": "pose_b.webp",
+  "midground_svg": "<svg viewBox='0 0 1280 720' xmlns='http://www.w3.org/2000/svg'><circle cx='300' cy='100' r='150' fill='#ffbe0b' opacity='0.35'/><circle cx='1000' cy='150' r='180' fill='#ffbe0b' opacity='0.35'/><path d='M0 720 L1280 720 L1280 680 L0 680 Z' fill='#000000' opacity='0.15'/></svg>",
+  "lyrics": [
+    {
+      "start": 0.0,
+      "end": 4.5,
+      "text": "Oh ma douce souffrance... pourquoi s'acharner ?"
+    },
+    {
+      "start": 4.5,
+      "end": 9.5,
+      "text": "Je ne suis qu'un \u00eatre sans importance..."
+    },
+    {
+      "start": 9.5,
+      "end": 14.5,
+      "text": "Je remue le ciel, le jour, la nuit..."
+    },
+    {
+      "start": 14.5,
+      "end": 20.0,
+      "text": "Je danse avec le vent, la pluie..."
+    }
+  ]
+}

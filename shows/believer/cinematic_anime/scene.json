@@ -1,0 +1,77 @@
+{
+  "song_id": "believer",
+  "style_id": "cinematic_anime",
+  "bpm": 125,
+  "story_summary": "A young dreamer, pushed to their limit by doubt and hardship, finds a moment of defiant clarity on a city rooftop at sunset. They channel their pain not into despair, but into a powerful, transformative fire, emerging as an unbreakable believer in their own strength.",
+  "characters": [
+    {
+      "name": "The Dreamer",
+      "role": "Protagonist",
+      "visual_design": "A determined young person with expressive eyes, wearing a dark knit beanie, a simple worn jacket over a t-shirt, and jeans. Their appearance is grounded and relatable."
+    }
+  ],
+  "story_beats": [
+    {
+      "beat": 1,
+      "tag": "explicit",
+      "title": "Fired Up and Tired",
+      "description": "The Dreamer stands at the edge of a rooftop, head bowed, looking down at the sprawling city below. They are visibly exhausted but a fire of frustration and resolve burns in their eyes, tired of how things have been."
+    },
+    {
+      "beat": 2,
+      "tag": "inferred",
+      "title": "Let the Bullets Fly",
+      "description": "A powerful gust of wind, representing the world's hardships and criticisms, slams into The Dreamer. They brace themselves, planting their feet and leaning into the invisible force, refusing to be knocked down."
+    },
+    {
+      "beat": 3,
+      "tag": "creative_interpretation",
+      "title": "PAIN! You Made Me a Believer",
+      "description": "The Dreamer throws their head back and lets out a silent, cathartic scream towards the blazing sky. As they do, their inner pain manifests physically, erupting from their chest as a torrent of golden embers and creative fire."
+    },
+    {
+      "beat": 4,
+      "tag": "creative_interpretation",
+      "title": "Final Freeze-Frame",
+      "description": "The scream subsides. The Dreamer now stands calm and resolute, chest held high. The golden embers no longer erupt but swirl peacefully around them like an aura, as they gaze confidently at the horizon, reborn."
+    }
+  ],
+  "panels": [
+    {
+      "panel_num": 1,
+      "file": "panel_1.webp",
+      "start": 0.0,
+      "end": 5.0,
+      "caption": "First things first, I'ma say all the words inside my head...",
+      "sfx": "PULSE!",
+      "camera_motion": "zoom_in"
+    },
+    {
+      "panel_num": 2,
+      "file": "panel_2.webp",
+      "start": 5.0,
+      "end": 10.0,
+      "caption": "I'm fired up and tired of the way that things have been...",
+      "sfx": "IGNITE!",
+      "camera_motion": "pan_right"
+    },
+    {
+      "panel_num": 3,
+      "file": "panel_3.webp",
+      "start": 10.0,
+      "end": 15.0,
+      "caption": "PAIN! You made me a, you made me a BELIEVER!",
+      "sfx": "CRACK!",
+      "camera_motion": "hero_punch"
+    },
+    {
+      "panel_num": 4,
+      "file": "panel_4.webp",
+      "start": 15.0,
+      "end": 22.0,
+      "caption": "Let the bullets fly, let them rain...",
+      "sfx": "RISE!",
+      "camera_motion": "pan_left"
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "song_id": "rowdy_baby",
+  "style_id": "cinematic_anime",
+  "bpm": 132,
+  "story_summary": "A charismatic street hero and his spirited partner engage in a dazzling dance-off on the vibrant streets of Chennai. Their playful taunts and flirtatious moves escalate into a joyous, cinematic celebration of their electrifying connection under a golden-hour sunset.",
+  "characters": [
+    {
+      "name": "Maari",
+      "role": "Protagonist",
+      "visual_design": "Charismatic young man in a casual, unbuttoned patterned shirt over a plain tee, dark trousers, and stylish sunglasses. Confident, playful swagger."
+    },
+    {
+      "name": "Anandhi",
+      "role": "Partner",
+      "visual_design": "Spirited young woman in a vibrant, modern lehenga with traditional jhumka earrings. Expressive, bold, and energetic."
+    }
+  ],
+  "story_beats": [
+    {
+      "beat": 1,
+      "tag": "explicit",
+      "title": "The Goli Soda Challenge",
+      "description": "On a bustling Chennai street corner, Maari, with a confident smirk, playfully gestures towards Anandhi, initiating a dance challenge."
+    },
+    {
+      "beat": 2,
+      "tag": "inferred",
+      "title": "The Fiery Response",
+      "description": "Anandhi, with a fiery look, accepts the challenge, striking a dynamic dance pose that mirrors and one-ups his initial move."
+    },
+    {
+      "beat": 3,
+      "tag": "explicit",
+      "title": "Rowdy Baby Synchronicity",
+      "description": "They come together in a burst of synchronized, high-energy dance, perfectly in sync and laughing as they spin amidst the golden light and lens flares."
+    },
+    {
+      "beat": 4,
+      "tag": "creative_interpretation",
+      "title": "The Final Freeze-Frame",
+      "description": "The dance culminates in a final, iconic freeze-frame pose. Maari dips Anandhi, both looking at the camera with triumphant, joyful expressions as the sunset blazes behind them."
+    }
+  ],
+  "panels": [
+    {
+      "panel_num": 1,
+      "file": "panel_1.webp",
+      "start": 0.0,
+      "end": 4.5,
+      "caption": "Hey en goli sodaave, en kari kozhambae!",
+      "sfx": "DANCE!",
+      "camera_motion": "zoom_in"
+    },
+    {
+      "panel_num": 2,
+      "file": "panel_2.webp",
+      "start": 4.5,
+      "end": 9.0,
+      "caption": "Un kutty puppy naan, take me, take me!",
+      "sfx": "WHOOSH!",
+      "camera_motion": "pan_right"
+    },
+    {
+      "panel_num": 3,
+      "file": "panel_3.webp",
+      "start": 9.0,
+      "end": 14.0,
+      "caption": "Hey rowdy baby... unnale mood aachu!",
+      "sfx": "BOOM!",
+      "camera_motion": "hero_punch"
+    },
+    {
+      "panel_num": 4,
+      "file": "panel_4.webp",
+      "start": 14.0,
+      "end": 22.0,
+      "caption": "One plus one two mama, you plus me free mama!",
+      "sfx": "PARTY!",
+      "camera_motion": "pan_left"
+    }
+  ]
+}

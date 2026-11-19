@@ -1,0 +1,35 @@
+{
+  "song_id": "sing_about_me",
+  "style_id": "gothic_noir",
+  "bpm": 96,
+  "motion_preset": "street_stride_nod",
+  "fx_type": "soundwave_bars",
+  "camera_motion": "street_scroll",
+  "accent_color": "#ffbe0b",
+  "bg_file": "bg.webp",
+  "pose_a_file": "pose_a.webp",
+  "pose_b_file": "pose_b.webp",
+  "midground_svg": "<svg viewBox='0 0 1280 720' xmlns='http://www.w3.org/2000/svg'><g opacity='0.35'><rect x='150' y='250' width='15' height='450' fill='#333' /><path d='M165 250 L250 250 L240 230 L175 230 Z' fill='#333' /><circle cx='250' cy='250' r='40' fill='#ffbe0b' /><circle cx='250' cy='250' r='60' fill='#ffbe0b' opacity='0.2' /></g><g opacity='0.35'><rect x='900' y='150' width='15' height='550' fill='#333' /><path d='M915 150 L1000 150 L990 130 L925 130 Z' fill='#333' /><circle cx='1000' cy='150' r='40' fill='#ffbe0b' /><circle cx='1000' cy='150' r='60' fill='#ffbe0b' opacity='0.2' /></g></svg>",
+  "lyrics": [
+    {
+      "start": 0.0,
+      "end": 5.0,
+      "text": "When the lights shut off and it's my turn to settle down..."
+    },
+    {
+      "start": 5.0,
+      "end": 10.0,
+      "text": "My main concern: promise that you will sing about me..."
+    },
+    {
+      "start": 10.0,
+      "end": 15.0,
+      "text": "Walking down this midnight avenue, streetlamps glowing..."
+    },
+    {
+      "start": 15.0,
+      "end": 20.0,
+      "text": "Promise that you will sing about me..."
+    }
+  ]
+}

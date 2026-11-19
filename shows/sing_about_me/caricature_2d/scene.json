@@ -1,0 +1,35 @@
+{
+  "song_id": "sing_about_me",
+  "style_id": "caricature_2d",
+  "bpm": 96,
+  "motion_preset": "street_stride_nod",
+  "fx_type": "soundwave_bars",
+  "camera_motion": "street_scroll",
+  "accent_color": "#ffbe0b",
+  "bg_file": "bg.webp",
+  "pose_a_file": "pose_a.webp",
+  "pose_b_file": "pose_b.webp",
+  "midground_svg": "<svg viewBox='0 0 1280 720' xmlns='http://www.w3.org/2000/svg'><defs><radialGradient id='lightGradient' cx='50%' cy='50%' r='50%' fx='50%' fy='50%'><stop offset='0%' stop-color='#ffbe0b' stop-opacity='1'/><stop offset='100%' stop-color='#ffbe0b' stop-opacity='0'/></radialGradient></defs><circle cx='300' cy='600' r='150' fill='url(#lightGradient)' opacity='0.35'/><circle cx='980' cy='620' r='180' fill='url(#lightGradient)' opacity='0.35'/></svg>",
+  "lyrics": [
+    {
+      "start": 0.0,
+      "end": 5.0,
+      "text": "When the lights shut off and it's my turn to settle down..."
+    },
+    {
+      "start": 5.0,
+      "end": 10.0,
+      "text": "My main concern: promise that you will sing about me..."
+    },
+    {
+      "start": 10.0,
+      "end": 15.0,
+      "text": "Walking down this midnight avenue, streetlamps glowing..."
+    },
+    {
+      "start": 15.0,
+      "end": 20.0,
+      "text": "Promise that you will sing about me..."
+    }
+  ]
+}

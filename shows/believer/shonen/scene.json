@@ -1,0 +1,77 @@
+{
+  "song_id": "believer",
+  "style_id": "shonen",
+  "bpm": 125,
+  "story_summary": "On a city rooftop at sunset, a frustrated young dreamer confronts his pain and self-doubt. He channels every hardship into a source of power, transforming his struggle into an unbreakable creative fire and emerging as a confident believer in his own strength.",
+  "characters": [
+    {
+      "name": "The Dreamer",
+      "role": "Protagonist",
+      "visual_design": "A determined young man with expressive anime eyes, wearing a dark grey knit beanie, a simple black hoodie, and worn jeans."
+    }
+  ],
+  "story_beats": [
+    {
+      "beat": 1,
+      "tag": "explicit",
+      "title": "The Breaking Point",
+      "description": "Fired up and tired of the way things have been, The Dreamer stands at the edge of a rooftop, clenching his fists in frustration against the world."
+    },
+    {
+      "beat": 2,
+      "tag": "creative_interpretation",
+      "title": "Let Them Rain",
+      "description": "He looks up defiantly as metaphorical 'bullets'\u2014shards of negativity and hardship\u2014rain down upon him, but he refuses to break."
+    },
+    {
+      "beat": 3,
+      "tag": "explicit",
+      "title": "The Believer",
+      "description": "Unleashing a primal scream, The Dreamer explodes with power. A fiery aura of creative energy erupts from him, shattering the negativity into dust."
+    },
+    {
+      "beat": 4,
+      "tag": "creative_interpretation",
+      "title": "Creative Fire",
+      "description": "Now calm and resolute, The Dreamer stands silhouetted against the sunset, golden embers of inspiration rising from his hands into the crimson sky."
+    }
+  ],
+  "panels": [
+    {
+      "panel_num": 1,
+      "file": "panel_1.webp",
+      "start": 0.0,
+      "end": 5.0,
+      "caption": "First things first, I'ma say all the words inside my head...",
+      "sfx": "PULSE!",
+      "camera_motion": "zoom_in"
+    },
+    {
+      "panel_num": 2,
+      "file": "panel_2.webp",
+      "start": 5.0,
+      "end": 10.0,
+      "caption": "I'm fired up and tired of the way that things have been...",
+      "sfx": "IGNITE!",
+      "camera_motion": "pan_right"
+    },
+    {
+      "panel_num": 3,
+      "file": "panel_3.webp",
+      "start": 10.0,
+      "end": 15.0,
+      "caption": "PAIN! You made me a, you made me a BELIEVER!",
+      "sfx": "CRACK!",
+      "camera_motion": "hero_punch"
+    },
+    {
+      "panel_num": 4,
+      "file": "panel_4.webp",
+      "start": 15.0,
+      "end": 22.0,
+      "caption": "Let the bullets fly, let them rain...",
+      "sfx": "RISE!",
+      "camera_motion": "pan_left"
+    }
+  ]
+}

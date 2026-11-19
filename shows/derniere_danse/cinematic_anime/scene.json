@@ -1,0 +1,77 @@
+{
+  "song_id": "derniere_danse",
+  "style_id": "cinematic_anime",
+  "bpm": 115,
+  "story_summary": "A solitary performer, feeling lost and insignificant in the twilight streets of Paris, channels her deep sorrow into a powerful, defiant dance. As a storm breaks, she embraces the wind and rain, transforming the cityscape into her stage and her pain into a breathtaking spectacle of resilience.",
+  "characters": [
+    {
+      "name": "The Performer",
+      "role": "Protagonist",
+      "visual_design": "A young woman with expressive, sorrowful eyes and windswept dark hair, wearing a striking, tailored crimson velvet coat over a simple dark dress."
+    }
+  ],
+  "story_beats": [
+    {
+      "beat": 1,
+      "tag": "explicit",
+      "title": "A Sweet Suffering",
+      "description": "Feeling like an unimportant being, the Performer stands hunched and forlorn at the top of rain-slicked Parisian steps, clutching her coat as the first drops of rain begin to fall under a dramatic sunset."
+    },
+    {
+      "beat": 2,
+      "tag": "inferred",
+      "title": "Stirring the Heavens",
+      "description": "Her expression shifts from sorrow to determination. She extends one arm gracefully, taking her first defiant dance step down the stone stairs, beginning to move the world around her."
+    },
+    {
+      "beat": 3,
+      "tag": "creative_interpretation",
+      "title": "The Dance with the Storm",
+      "description": "At the peak of her dance, she leaps into the air in a whirlwind of motion. Her crimson coat flares out as the wind and rain swirl around her in a vortex of raw, untamed emotion."
+    },
+    {
+      "beat": 4,
+      "tag": "creative_interpretation",
+      "title": "Final Freeze-Frame",
+      "description": "The dance concludes. She stands poised and powerful at the bottom of the steps, head held high, looking directly forward with a triumphant gaze as the storm subsides behind her."
+    }
+  ],
+  "panels": [
+    {
+      "panel_num": 1,
+      "file": "panel_1.webp",
+      "start": 0.0,
+      "end": 5.0,
+      "caption": "Oh ma douce souffrance... pourquoi s'acharner ?",
+      "sfx": "DRIP...",
+      "camera_motion": "zoom_in"
+    },
+    {
+      "panel_num": 2,
+      "file": "panel_2.webp",
+      "start": 5.0,
+      "end": 10.0,
+      "caption": "Je ne suis qu'un \u00eatre sans importance...",
+      "sfx": "WIND!",
+      "camera_motion": "pan_right"
+    },
+    {
+      "panel_num": 3,
+      "file": "panel_3.webp",
+      "start": 10.0,
+      "end": 15.0,
+      "caption": "Je remue le ciel, le jour, la nuit...",
+      "sfx": "SWIRL!",
+      "camera_motion": "hero_punch"
+    },
+    {
+      "panel_num": 4,
+      "file": "panel_4.webp",
+      "start": 15.0,
+      "end": 22.0,
+      "caption": "Je danse avec le vent, la pluie...",
+      "sfx": "CLIMAX!",
+      "camera_motion": "pan_left"
+    }
+  ]
+}

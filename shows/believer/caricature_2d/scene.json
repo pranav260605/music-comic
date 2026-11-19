@@ -1,0 +1,35 @@
+{
+  "song_id": "believer",
+  "style_id": "caricature_2d",
+  "bpm": 125,
+  "motion_preset": "breathing_glow",
+  "fx_type": "sunset_embers",
+  "camera_motion": "slow_push_in",
+  "accent_color": "#ffbe0b",
+  "bg_file": "bg.webp",
+  "pose_a_file": "pose_a.webp",
+  "pose_b_file": "pose_b.webp",
+  "midground_svg": "<svg viewBox='0 0 1280 720' xmlns='http://www.w3.org/2000/svg'><defs><radialGradient id='sunsetGlow' cx='50%' cy='50%' r='50%' fx='50%' fy='50%'><stop offset='0%' stop-color='#FFD700' stop-opacity='0.35'/><stop offset='100%' stop-color='#FF8C00' stop-opacity='0'/></radialGradient></defs><circle cx='1000' cy='150' r='300' fill='url(#sunsetGlow)' opacity='0.35'/><circle cx='250' cy='600' r='200' fill='url(#sunsetGlow)' opacity='0.35'/></svg>",
+  "lyrics": [
+    {
+      "start": 0.0,
+      "end": 4.5,
+      "text": "First things first, I'ma say all the words inside my head..."
+    },
+    {
+      "start": 4.5,
+      "end": 9.5,
+      "text": "I'm fired up and tired of the way that things have been..."
+    },
+    {
+      "start": 9.5,
+      "end": 14.5,
+      "text": "PAIN! You made me a, you made me a BELIEVER!"
+    },
+    {
+      "start": 14.5,
+      "end": 20.0,
+      "text": "Let the bullets fly, let them rain..."
+    }
+  ]
+}

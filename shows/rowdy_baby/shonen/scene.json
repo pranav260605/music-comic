@@ -1,0 +1,82 @@
+{
+  "song_id": "rowdy_baby",
+  "style_id": "shonen",
+  "bpm": 132,
+  "story_summary": "A charismatic street hero and his fiery partner engage in a high-energy dance-off on the vibrant streets of Chennai. Their playful taunts and one-upmanship escalate into a chaotic, synchronized celebration of their explosive chemistry. The city itself becomes their dance floor in a vibrant explosion of color and motion.",
+  "characters": [
+    {
+      "name": "Maari",
+      "role": "Protagonist",
+      "visual_design": "A charismatic young man with a roguish grin, wearing a simple black shirt, a black veshti (dhoti) with a patterned border, and stylish sunglasses."
+    },
+    {
+      "name": "Anandhi",
+      "role": "Partner",
+      "visual_design": "A spirited young woman with long, flowing dark hair and expressive eyes, wearing a vibrant festive half-sari in crimson red (#D72631) and comic yellow (#FFD60A)."
+    }
+  ],
+  "story_beats": [
+    {
+      "beat": 1,
+      "tag": "explicit",
+      "title": "The Challenge",
+      "description": "On a bustling Chennai street, Maari, the picture of cool confidence, playfully challenges Anandhi with a cocky dance gesture."
+    },
+    {
+      "beat": 2,
+      "tag": "inferred",
+      "title": "The Rebuttal",
+      "description": "Anandhi, unfazed, responds with an explosive and even more energetic dance move, catching Maari off-guard with her 'rowdy' spirit."
+    },
+    {
+      "beat": 3,
+      "tag": "creative_interpretation",
+      "title": "Synchronized Chaos",
+      "description": "The one-upmanship transforms into a perfectly synchronized, high-octane dance duet. They move as one, a whirlwind of energy and color, their individual styles clashing and combining beautifully."
+    },
+    {
+      "beat": 4,
+      "tag": "creative_interpretation",
+      "title": "The Final Pose",
+      "description": "As the energy peaks, they strike a final, iconic back-to-back pose, laughing triumphantly. They've proven they are an unstoppable, perfectly matched pair."
+    }
+  ],
+  "panels": [
+    {
+      "panel_num": 1,
+      "file": "panel_1.webp",
+      "start": 0.0,
+      "end": 4.5,
+      "caption": "Hey en goli sodaave, en kari kozhambae!",
+      "sfx": "DANCE!",
+      "camera_motion": "zoom_in"
+    },
+    {
+      "panel_num": 2,
+      "file": "panel_2.webp",
+      "start": 4.5,
+      "end": 9.0,
+      "caption": "Un kutty puppy naan, take me, take me!",
+      "sfx": "WHOOSH!",
+      "camera_motion": "pan_right"
+    },
+    {
+      "panel_num": 3,
+      "file": "panel_3.webp",
+      "start": 9.0,
+      "end": 14.0,
+      "caption": "Hey rowdy baby... unnale mood aachu!",
+      "sfx": "BOOM!",
+      "camera_motion": "hero_punch"
+    },
+    {
+      "panel_num": 4,
+      "file": "panel_4.webp",
+      "start": 14.0,
+      "end": 22.0,
+      "caption": "One plus one two mama, you plus me free mama!",
+      "sfx": "PARTY!",
+      "camera_motion": "pan_left"
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "song_id": "sing_about_me",
+  "style_id": "shonen",
+  "bpm": 96,
+  "story_summary": "A young poet on a solitary midnight walk grapples with his own mortality and the burning desire for his story to be remembered. His internal plea for legacy erupts into a silent, explosive burst of creative energy against the quiet city night. He ultimately finds a quiet resolve, his silhouette a testament to the stories that will outlive him.",
+  "characters": [
+    {
+      "name": "The Poet",
+      "role": "Protagonist",
+      "visual_design": "Young man with expressive, thoughtful eyes, wearing an oversized black hoodie, dark jeans, and worn sneakers. His face is often half-shadowed by his hood."
+    }
+  ],
+  "story_beats": [
+    {
+      "beat": 1,
+      "tag": "explicit",
+      "title": "Midnight Avenue",
+      "description": "The Poet walks down a quiet, empty city avenue, his head bowed in thought under the warm glow of amber streetlamps."
+    },
+    {
+      "beat": 2,
+      "tag": "inferred",
+      "title": "The Main Concern",
+      "description": "He stops beside a classic parked car, looking up with a sudden, intense realization. He clenches his fist as the desperate need to be remembered consumes his thoughts."
+    },
+    {
+      "beat": 3,
+      "tag": "creative_interpretation",
+      "title": "Sing About Me",
+      "description": "A silent scream of passion erupts from The Poet. An explosive aura of crimson and yellow energy bursts from his chest, illuminating the street with dynamic speed lines as he throws his arms wide."
+    },
+    {
+      "beat": 4,
+      "tag": "creative_interpretation",
+      "title": "Settle Down",
+      "description": "The energy subsides. The Poet stands calmly, seen from behind, his long shadow stretching down the avenue as he looks towards the dawn, having found peace in his plea."
+    }
+  ],
+  "panels": [
+    {
+      "panel_num": 1,
+      "file": "panel_1.webp",
+      "start": 0.0,
+      "end": 5.5,
+      "caption": "When the lights shut off and it's my turn to settle down...",
+      "sfx": "FADE...",
+      "camera_motion": "zoom_in"
+    },
+    {
+      "panel_num": 2,
+      "file": "panel_2.webp",
+      "start": 5.5,
+      "end": 11.0,
+      "caption": "My main concern: promise that you will sing about me...",
+      "sfx": "ECHO!",
+      "camera_motion": "pan_right"
+    },
+    {
+      "panel_num": 3,
+      "file": "panel_3.webp",
+      "start": 11.0,
+      "end": 16.5,
+      "caption": "Walking down this midnight avenue, streetlamps glowing...",
+      "sfx": "STEP...",
+      "camera_motion": "hero_punch"
+    },
+    {
+      "panel_num": 4,
+      "file": "panel_4.webp",
+      "start": 16.5,
+      "end": 22.0,
+      "caption": "Promise that you will sing about me...",
+      "sfx": "LEGACY!",
+      "camera_motion": "pan_left"
+    }
+  ]
+}

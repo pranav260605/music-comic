@@ -1,0 +1,35 @@
+{
+  "song_id": "believer",
+  "style_id": "gothic_noir",
+  "bpm": 125,
+  "motion_preset": "breathing_glow",
+  "fx_type": "sunset_embers",
+  "camera_motion": "slow_push_in",
+  "accent_color": "#ffbe0b",
+  "bg_file": "bg.webp",
+  "pose_a_file": "pose_a.webp",
+  "pose_b_file": "pose_b.webp",
+  "midground_svg": "<svg viewBox='0 0 1280 720' xmlns='http://www.w3.org/2000/svg'><defs><linearGradient id='sunsetGlow' x1='0%' y1='0%' x2='0%' y2='100%'><stop offset='0%' style='stop-color:#ffbe0b;stop-opacity:0.35' /><stop offset='50%' style='stop-color:#ff7b00;stop-opacity:0.2' /><stop offset='100%' style='stop-color:#ffbe0b;stop-opacity:0.0' /></linearGradient></defs><rect x='0' y='0' width='1280' height='720' fill='url(#sunsetGlow)' /><g stroke='#ffbe0b' stroke-width='1' opacity='0.35'><line x1='100' y1='0' x2='100' y2='720' /><line x1='300' y1='0' x2='300' y2='720' /><line x1='500' y1='0' x2='500' y2='720' /><line x1='700' y1='0' x2='700' y2='720' /><line x1='900' y1='0' x2='900' y2='720' /><line x1='1100' y1='0' x2='1100' y2='720' /></g></svg>",
+  "lyrics": [
+    {
+      "start": 0.0,
+      "end": 4.5,
+      "text": "First things first, I'ma say all the words inside my head..."
+    },
+    {
+      "start": 4.5,
+      "end": 9.5,
+      "text": "I'm fired up and tired of the way that things have been..."
+    },
+    {
+      "start": 9.5,
+      "end": 14.5,
+      "text": "PAIN! You made me a, you made me a BELIEVER!"
+    },
+    {
+      "start": 14.5,
+      "end": 20.0,
+      "text": "Let the bullets fly, let them rain..."
+    }
+  ]
+}

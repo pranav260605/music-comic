@@ -1,0 +1,138 @@
+{
+  "styles": [
+    {
+      "id": "shonen",
+      "name": "Shonen Action",
+      "desc": "Speed lines, bold yellow/red energy",
+      "color": "#ffd60a"
+    },
+    {
+      "id": "cinematic_anime",
+      "name": "Cinematic Anime",
+      "desc": "Golden-hour film light and depth",
+      "color": "#f6a04d"
+    },
+    {
+      "id": "dark_fantasy",
+      "name": "Gothic Noir",
+      "desc": "Moody shadows & dramatic ink",
+      "color": "#a78bd8"
+    },
+    {
+      "id": "classic_manga",
+      "name": "Classic Manga",
+      "desc": "Ink, screentone, hatching",
+      "color": "#ffffff"
+    },
+    {
+      "id": "modern_anime",
+      "name": "Modern Anime",
+      "desc": "Clean cel shading",
+      "color": "#9bd7ff"
+    },
+    {
+      "id": "shojo",
+      "name": "Shojo Romance",
+      "desc": "Delicate, sparkling",
+      "color": "#ffc0d9"
+    },
+    {
+      "id": "watercolor",
+      "name": "Watercolor",
+      "desc": "Soft washes",
+      "color": "#bfe6d4"
+    },
+    {
+      "id": "retro_anime",
+      "name": "Retro Anime",
+      "desc": "90s grain and colour",
+      "color": "#f2c48d"
+    },
+    {
+      "id": "soft_romantic",
+      "name": "Soft Romantic",
+      "desc": "Pastel glow",
+      "color": "#ffd9d0"
+    },
+    {
+      "id": "fantasy_illustration",
+      "name": "Fantasy Illustration",
+      "desc": "Ornate, detailed",
+      "color": "#d7c08a"
+    }
+  ],
+  "songs": [
+    {
+      "id": "rowdy_baby",
+      "title": "Rowdy Baby",
+      "artist": "Dhanush & Dhee (Maari 2)",
+      "language": "Tamil / English",
+      "genre": "Tamil Festive Pop",
+      "bpm": 132,
+      "lyrics_full": "Hey en goli sodaave, en kari kozhambae!\nUn kutty puppy naan, take me, take me!\nHey rowdy baby... unnale mood aachu!\nOne plus one two mama, you plus me free mama!",
+      "notes": "Playful Chennai street romance & energetic dance celebration between a charismatic local hero and his bold partner.",
+      "default_style": "shonen",
+      "enabled_styles": [
+        "shonen",
+        "cinematic_anime",
+        "dark_fantasy"
+      ],
+      "thumbnail": "shows/rowdy_baby/shonen/panel_1.webp",
+      "audio": "shows/rowdy_baby/audio.mp3"
+    },
+    {
+      "id": "derniere_danse",
+      "title": "Derni\u00e8re Danse",
+      "artist": "Indila",
+      "language": "French / Global",
+      "genre": "Dramatic Chanson Pop",
+      "bpm": 115,
+      "lyrics_full": "Oh ma douce souffrance... pourquoi s'acharner ?\nJe ne suis qu'un \u00eatre sans importance...\nJe remue le ciel, le jour, la nuit...\nJe danse avec le vent, la pluie...",
+      "notes": "Poetic struggle against sorrow in twilight Paris\u2014turning pain and solitude into a defiant dance with the wind and rain.",
+      "default_style": "dark_fantasy",
+      "enabled_styles": [
+        "dark_fantasy",
+        "cinematic_anime",
+        "shonen"
+      ],
+      "thumbnail": "shows/derniere_danse/dark_fantasy/panel_1.webp",
+      "audio": "shows/derniere_danse/audio.mp3"
+    },
+    {
+      "id": "believer",
+      "title": "Believer",
+      "artist": "Imagine Dragons",
+      "language": "English",
+      "genre": "Arena Pop-Rock",
+      "bpm": 125,
+      "lyrics_full": "First things first, I'ma say all the words inside my head...\nI'm fired up and tired of the way that things have been...\nPAIN! You made me a, you made me a BELIEVER!\nLet the bullets fly, let them rain...",
+      "notes": "Rising above self-doubt and hardship on a sunset rooftop, transforming every setback into unbreakable creative fire.",
+      "default_style": "cinematic_anime",
+      "enabled_styles": [
+        "cinematic_anime",
+        "shonen",
+        "dark_fantasy"
+      ],
+      "thumbnail": "shows/believer/cinematic_anime/panel_1.webp",
+      "audio": "shows/believer/audio.mp3"
+    },
+    {
+      "id": "sing_about_me",
+      "title": "Sing About Me",
+      "artist": "Kendrick Lamar",
+      "language": "English",
+      "genre": "Conscious Hip-Hop",
+      "bpm": 96,
+      "lyrics_full": "When the lights shut off and it's my turn to settle down...\nMy main concern: promise that you will sing about me...\nWalking down this midnight avenue, streetlamps glowing...\nPromise that you will sing about me...",
+      "notes": "Midnight reflection along quiet city avenues\u2014honoring memory, legacy, and stories that outlive the night.",
+      "default_style": "dark_fantasy",
+      "enabled_styles": [
+        "dark_fantasy",
+        "shonen",
+        "cinematic_anime"
+      ],
+      "thumbnail": "shows/sing_about_me/dark_fantasy/panel_1.webp",
+      "audio": "shows/sing_about_me/audio.mp3"
+    }
+  ]
+}

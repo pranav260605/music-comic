@@ -1,0 +1,77 @@
+{
+  "song_id": "sing_about_me",
+  "style_id": "cinematic_anime",
+  "bpm": 96,
+  "story_summary": "A young poet wanders a deserted city avenue at midnight, lost in thought under the amber glow of streetlamps. His solitary walk is a quiet plea for his story to be remembered, a search for legacy in the fleeting moments before the night ends. He seeks assurance that his life, like a song, will be sung long after he's gone.",
+  "characters": [
+    {
+      "name": "The Poet",
+      "role": "Protagonist",
+      "visual_design": "A young man with an expressive, thoughtful face, wearing an oversized dark hoodie, baggy jeans, and worn sneakers. His features are often cast in shadow and highlighted by warm rim lighting."
+    }
+  ],
+  "story_beats": [
+    {
+      "beat": 1,
+      "tag": "explicit",
+      "title": "Midnight Avenue",
+      "description": "The Poet begins a solitary walk down a quiet, empty city street. The only light comes from the warm, glowing streetlamps, casting long shadows ahead of him."
+    },
+    {
+      "beat": 2,
+      "tag": "inferred",
+      "title": "Passing Echoes",
+      "description": "He walks past a classic, beautifully maintained parked car, a relic of another time. He glances at his reflection in the window, contemplating the stories and lives that have passed through this same street."
+    },
+    {
+      "beat": 3,
+      "tag": "creative_interpretation",
+      "title": "The Plea",
+      "description": "The Poet stops directly under a streetlamp, looking up into the light as if making a silent promise or a prayer. This is the emotional peak, his face a mix of hope and vulnerability, asking the universe to remember him."
+    },
+    {
+      "beat": 4,
+      "tag": "creative_interpretation",
+      "title": "Fading into Legend",
+      "description": "With a renewed, quiet determination, The Poet continues his walk, moving away from the viewer down the long avenue. His figure slowly becomes a silhouette against the distant city glow, his story now part of the night."
+    }
+  ],
+  "panels": [
+    {
+      "panel_num": 1,
+      "file": "panel_1.webp",
+      "start": 0.0,
+      "end": 5.5,
+      "caption": "When the lights shut off and it's my turn to settle down...",
+      "sfx": "FADE...",
+      "camera_motion": "zoom_in"
+    },
+    {
+      "panel_num": 2,
+      "file": "panel_2.webp",
+      "start": 5.5,
+      "end": 11.0,
+      "caption": "My main concern: promise that you will sing about me...",
+      "sfx": "ECHO!",
+      "camera_motion": "pan_right"
+    },
+    {
+      "panel_num": 3,
+      "file": "panel_3.webp",
+      "start": 11.0,
+      "end": 16.5,
+      "caption": "Walking down this midnight avenue, streetlamps glowing...",
+      "sfx": "STEP...",
+      "camera_motion": "hero_punch"
+    },
+    {
+      "panel_num": 4,
+      "file": "panel_4.webp",
+      "start": 16.5,
+      "end": 22.0,
+      "caption": "Promise that you will sing about me...",
+      "sfx": "LEGACY!",
+      "camera_motion": "pan_left"
+    }
+  ]
+}

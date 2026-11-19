@@ -1,0 +1,77 @@
+{
+  "song_id": "sing_about_me",
+  "style_id": "dark_fantasy",
+  "bpm": 96,
+  "story_summary": "A solitary young poet wanders a rain-slicked, gothic city avenue at midnight, lost in a deep reflection on mortality and legacy. His quiet journey under the amber streetlamps becomes a silent, powerful plea for his story to be remembered long after he's gone. The city itself bears witness to his hope for immortality through memory.",
+  "characters": [
+    {
+      "name": "The Poet",
+      "role": "Protagonist",
+      "visual_design": "A young man in a large, dark, oversized hoodie that casts his face in deep shadow, wearing simple dark pants and worn sneakers."
+    }
+  ],
+  "story_beats": [
+    {
+      "beat": 1,
+      "tag": "explicit",
+      "title": "Midnight Avenue",
+      "description": "The Poet begins his solitary walk down a deserted, rain-slicked avenue, his figure dwarfed by the towering gothic architecture and illuminated by a single, glowing streetlamp."
+    },
+    {
+      "beat": 2,
+      "tag": "inferred",
+      "title": "Reflected Legacy",
+      "description": "He pauses beside a classic parked car, its rain-beaded chrome reflecting the city lights. He gazes at his own distorted reflection, contemplating the fleeting nature of his image."
+    },
+    {
+      "beat": 3,
+      "tag": "creative_interpretation",
+      "title": "A Silent Plea",
+      "description": "Stopping in the middle of the street, The Poet looks up towards the dark, rainy sky. His face, partially lit by the crimson and amber glow, holds an expression of intense, silent yearning to be remembered."
+    },
+    {
+      "beat": 4,
+      "tag": "creative_interpretation",
+      "title": "Fading into Story",
+      "description": "Resuming his journey, The Poet's figure walks away from the camera, receding down the long avenue until he is just a silhouette merging with the shadows and distant lights of the eternal city."
+    }
+  ],
+  "panels": [
+    {
+      "panel_num": 1,
+      "file": "panel_1.webp",
+      "start": 0.0,
+      "end": 5.5,
+      "caption": "When the lights shut off and it's my turn to settle down...",
+      "sfx": "FADE...",
+      "camera_motion": "zoom_in"
+    },
+    {
+      "panel_num": 2,
+      "file": "panel_2.webp",
+      "start": 5.5,
+      "end": 11.0,
+      "caption": "My main concern: promise that you will sing about me...",
+      "sfx": "ECHO!",
+      "camera_motion": "pan_right"
+    },
+    {
+      "panel_num": 3,
+      "file": "panel_3.webp",
+      "start": 11.0,
+      "end": 16.5,
+      "caption": "Walking down this midnight avenue, streetlamps glowing...",
+      "sfx": "STEP...",
+      "camera_motion": "hero_punch"
+    },
+    {
+      "panel_num": 4,
+      "file": "panel_4.webp",
+      "start": 16.5,
+      "end": 22.0,
+      "caption": "Promise that you will sing about me...",
+      "sfx": "LEGACY!",
+      "camera_motion": "pan_left"
+    }
+  ]
+}

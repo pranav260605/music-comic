@@ -1,0 +1,82 @@
+{
+  "song_id": "rowdy_baby",
+  "style_id": "dark_fantasy",
+  "bpm": 132,
+  "story_summary": "In a rain-slicked, gothic city bathed in twilight, a charismatic street hero's playful challenge ignites a fiery dance with his spirited partner. Their energetic celebration becomes a vibrant explosion of color and life, a defiant burst of joy against the moody, shadowed stone architecture. Their connection is a beacon in the noir-drenched night.",
+  "characters": [
+    {
+      "name": "Maari",
+      "role": "Protagonist",
+      "visual_design": "A charismatic young South Indian man in a casual, unbuttoned dark shirt over a white tee, stylish black sunglasses, and a confident smirk. His look is effortless street-style cool."
+    },
+    {
+      "name": "Anandhi",
+      "role": "Partner",
+      "visual_design": "A spirited young South Indian woman in a vibrant, festive crimson and gold lehenga that contrasts sharply with the dark surroundings. Her expression is bold and playful."
+    }
+  ],
+  "story_beats": [
+    {
+      "beat": 1,
+      "tag": "explicit",
+      "title": "The Glimmer in the Gloom",
+      "description": "Leaning against a rain-soaked stone archway, Maari spots Anandhi, a brilliant splash of crimson and gold in the dark, moody Chennai street. He pushes off the wall, a playful challenge in his eyes."
+    },
+    {
+      "beat": 2,
+      "tag": "inferred",
+      "title": "The Dance Begins",
+      "description": "Maari breaks into an energetic dance move in the middle of the street, kicking up a spray of water from a puddle that catches the amber streetlamp glow. Anandhi watches with a daring smile, ready to match his energy."
+    },
+    {
+      "beat": 3,
+      "tag": "creative_interpretation",
+      "title": "A Rowdy Duet",
+      "description": "Anandhi joins him in a whirlwind of motion. They dance together, a blur of vibrant color and joyful energy, their movements perfectly in sync as they splash through the rain-slicked street, lost in their own world."
+    },
+    {
+      "beat": 4,
+      "tag": "creative_interpretation",
+      "title": "Twilight Freeze-Frame",
+      "description": "The dance culminates in a final, iconic pose. Maari dips Anandhi dramatically, her crimson lehenga fanning out over the wet stone as they share a laugh, frozen for a moment under the intense, moody glow of a single streetlamp."
+    }
+  ],
+  "panels": [
+    {
+      "panel_num": 1,
+      "file": "panel_1.webp",
+      "start": 0.0,
+      "end": 4.5,
+      "caption": "Hey en goli sodaave, en kari kozhambae!",
+      "sfx": "DANCE!",
+      "camera_motion": "zoom_in"
+    },
+    {
+      "panel_num": 2,
+      "file": "panel_2.webp",
+      "start": 4.5,
+      "end": 9.0,
+      "caption": "Un kutty puppy naan, take me, take me!",
+      "sfx": "WHOOSH!",
+      "camera_motion": "pan_right"
+    },
+    {
+      "panel_num": 3,
+      "file": "panel_3.webp",
+      "start": 9.0,
+      "end": 14.0,
+      "caption": "Hey rowdy baby... unnale mood aachu!",
+      "sfx": "BOOM!",
+      "camera_motion": "hero_punch"
+    },
+    {
+      "panel_num": 4,
+      "file": "panel_4.webp",
+      "start": 14.0,
+      "end": 22.0,
+      "caption": "One plus one two mama, you plus me free mama!",
+      "sfx": "PARTY!",
+      "camera_motion": "pan_left"
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "song_id": "believer",
+  "style_id": "dark_fantasy",
+  "bpm": 125,
+  "story_summary": "A young dreamer, overwhelmed by the city's pressure, confronts their inner pain on a rain-slicked rooftop at sunset. Instead of being broken, they channel their hardship into a defiant, creative fire, transforming from a silhouette of doubt into a beacon of self-belief against the twilight skyline.",
+  "characters": [
+    {
+      "name": "The Dreamer",
+      "role": "Protagonist",
+      "visual_design": "A determined young person with an androgynous look, wearing a dark, worn-out knit beanie, a slightly oversized charcoal hoodie, and dark jeans. Their face is etched with a mix of exhaustion and burgeoning defiance."
+    }
+  ],
+  "story_beats": [
+    {
+      "beat": 1,
+      "tag": "explicit",
+      "title": "Fired Up and Tired",
+      "description": "The Dreamer stands at the edge of a gothic rooftop, head bowed against the wind, looking down at the sprawling, rain-slicked city below as the sun sets. They are a small figure against the vast, oppressive architecture, clenching their fists in frustration."
+    },
+    {
+      "beat": 2,
+      "tag": "inferred",
+      "title": "Let Them Rain",
+      "description": "As the sky darkens to a deep crimson, shadowy, shard-like projectiles begin to rain down, representing words of doubt and hardship. The Dreamer looks up, letting the 'bullets' strike and shatter harmlessly against an unseen forcefield of sheer will, their expression hardening."
+    },
+    {
+      "beat": 3,
+      "tag": "creative_interpretation",
+      "title": "The Believer",
+      "description": "With a silent scream, The Dreamer throws their head back. A violent explosion of golden embers and creative fire erupts from their chest, vaporizing the raining shards and pushing back the encroaching shadows in a brilliant, defiant shockwave."
+    },
+    {
+      "beat": 4,
+      "tag": "creative_interpretation",
+      "title": "Final Freeze-Frame",
+      "description": "The storm has passed. The Dreamer stands calm and resolute, bathed in the warm glow of the golden embers that now swirl peacefully around them. They look out over the city with newfound confidence, their silhouette no longer lost but defined by their own inner light."
+    }
+  ],
+  "panels": [
+    {
+      "panel_num": 1,
+      "file": "panel_1.webp",
+      "start": 0.0,
+      "end": 5.0,
+      "caption": "First things first, I'ma say all the words inside my head...",
+      "sfx": "PULSE!",
+      "camera_motion": "zoom_in"
+    },
+    {
+      "panel_num": 2,
+      "file": "panel_2.webp",
+      "start": 5.0,
+      "end": 10.0,
+      "caption": "I'm fired up and tired of the way that things have been...",
+      "sfx": "IGNITE!",
+      "camera_motion": "pan_right"
+    },
+    {
+      "panel_num": 3,
+      "file": "panel_3.webp",
+      "start": 10.0,
+      "end": 15.0,
+      "caption": "PAIN! You made me a, you made me a BELIEVER!",
+      "sfx": "CRACK!",
+      "camera_motion": "hero_punch"
+    },
+    {
+      "panel_num": 4,
+      "file": "panel_4.webp",
+      "start": 15.0,
+      "end": 22.0,
+      "caption": "Let the bullets fly, let them rain...",
+      "sfx": "RISE!",
+      "camera_motion": "pan_left"
+    }
+  ]
+}

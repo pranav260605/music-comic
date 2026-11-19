@@ -1,0 +1,77 @@
+{
+  "song_id": "derniere_danse",
+  "style_id": "dark_fantasy",
+  "bpm": 115,
+  "story_summary": "A solitary woman, feeling insignificant amidst the twilight gloom of Paris, channels her profound sorrow into a powerful, defiant dance. She confronts the wind and rain on slick stone steps, transforming her pain into a theatrical performance of resilience against the gothic noir cityscape.",
+  "characters": [
+    {
+      "name": "Indila",
+      "role": "Protagonist",
+      "visual_design": "A woman with dark, wind-swept hair and a determined, melancholic expression, wearing a striking, tailored crimson velvet coat over a simple dark dress."
+    }
+  ],
+  "story_beats": [
+    {
+      "beat": 1,
+      "tag": "explicit",
+      "title": "Douce Souffrance",
+      "description": "At the top of rain-slicked stone steps, Indila pauses under a vintage streetlamp, her face a mask of sweet suffering as she feels the weight of her solitude and insignificance."
+    },
+    {
+      "beat": 2,
+      "tag": "inferred",
+      "title": "Remue le Ciel",
+      "description": "She begins her descent, her initial hesitant steps transforming into the first powerful movements of a graceful, defiant dance, her crimson coat beginning to flow with the wind."
+    },
+    {
+      "beat": 3,
+      "tag": "creative_interpretation",
+      "title": "Danse avec la Pluie",
+      "description": "In a storm of motion at the midpoint of the steps, she fully embraces the elements, head thrown back and arms outstretched, her coat a vibrant crimson swirl against the dark, wet city."
+    },
+    {
+      "beat": 4,
+      "tag": "creative_interpretation",
+      "title": "Final Freeze-Frame",
+      "description": "The dance concludes at the bottom of the steps. She stands still, soaked but unbroken, gazing into the amber-lit Parisian night with a look of quiet, resolute strength."
+    }
+  ],
+  "panels": [
+    {
+      "panel_num": 1,
+      "file": "panel_1.webp",
+      "start": 0.0,
+      "end": 5.0,
+      "caption": "Oh ma douce souffrance... pourquoi s'acharner ?",
+      "sfx": "DRIP...",
+      "camera_motion": "zoom_in"
+    },
+    {
+      "panel_num": 2,
+      "file": "panel_2.webp",
+      "start": 5.0,
+      "end": 10.0,
+      "caption": "Je ne suis qu'un \u00eatre sans importance...",
+      "sfx": "WIND!",
+      "camera_motion": "pan_right"
+    },
+    {
+      "panel_num": 3,
+      "file": "panel_3.webp",
+      "start": 10.0,
+      "end": 15.0,
+      "caption": "Je remue le ciel, le jour, la nuit...",
+      "sfx": "SWIRL!",
+      "camera_motion": "hero_punch"
+    },
+    {
+      "panel_num": 4,
+      "file": "panel_4.webp",
+      "start": 15.0,
+      "end": 22.0,
+      "caption": "Je danse avec le vent, la pluie...",
+      "sfx": "CLIMAX!",
+      "camera_motion": "pan_left"
+    }
+  ]
+}
